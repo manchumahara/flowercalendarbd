@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ফুল চাষের বর্ষপঞ্জি | বাংলাদেশ ফুল চাষ ক্যালেন্ডার</title>
+<meta name="description" content="বাংলাদেশের আবহাওয়া ও মৌসুম অনুযায়ী ফুল চাষের সম্পূর্ণ বর্ষপঞ্জি। গোলাপ, গাঁদা, রজনীগন্ধা, জারবেরা সহ সকল ফুলের বীজ বপন ও চারা রোপণের সঠিক সময় জানুন।">
+<meta name="keywords" content="ফুল চাষ, বাংলাদেশ ফুল চাষ, ফুলের বর্ষপঞ্জি, গোলাপ চাষ, গাঁদা ফুল, রজনীগন্ধা, ফুল চাষ ক্যালেন্ডার, flower cultivation bangladesh">
+<meta name="author" content="Sabuj Kundu">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ফুল চাষের বর্ষপঞ্জি | বাংলাদেশ">
+<meta property="og:description" content="বাংলাদেশের আবহাওয়া অনুযায়ী মাস ভিত্তিক ফুল চাষের ইন্টারেক্টিভ গাইড।">
+<meta property="og:locale" content="bn_BD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ফুল চাষের বর্ষপঞ্জি | বাংলাদেশ">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'SolaimanLipi', "Siyam Rupali", 'Segoe UI', sans-serif; background: #4a0d6e; color: #222; min-height: 100vh; }
+header { background: linear-gradient(135deg, #7b2fa0, #c0392b, #e91e8c); text-align: center; padding: 20px 10px; color: white; }
+header h1 { font-size: clamp(1.4rem, 4vw, 2.2rem); text-shadow: 1px 1px 4px rgba(0,0,0,0.4); }
+header p { font-size: 0.9rem; opacity: 0.85; margin-top: 4px; }
+.tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 14px; background: #35094f; }
+.tab { padding: 8px 16px; border-radius: 20px; border: 2px solid #e91e8c; color: #e91e8c; background: transparent; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.tab.active, .tab:hover { background: #e91e8c; color: #fff; }
+.content { padding: 16px; max-width: 1100px; margin: 0 auto; }
+.view-section { display: none; }
+.view-section.active { display: block; }
+.tip { background: #fce4ec; border-left: 4px solid #e91e8c; padding: 10px 14px; border-radius: 0 8px 8px 0; margin-bottom: 14px; font-size: 0.85rem; color: #880e4f; }
+
+/* MONTH GRID */
+#view-month .month-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.month-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,0.25); }
+.month-card .mc-header { background: linear-gradient(135deg, #9b59b6, #e91e8c); color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+.month-card .mc-header h3 { font-size: 1rem; }
+.month-card .mc-header span { font-size: 0.78rem; opacity: 0.85; }
+.month-card .mc-body { padding: 12px 16px; }
+.cat-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: #888; margin-top: 8px; margin-bottom: 3px; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag { font-size: 0.72rem; padding: 3px 8px; border-radius: 12px; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+.tag:hover { transform: scale(1.08); box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+.tag.pink { background: #fce4ec; color: #880e4f; }
+.tag.yellow { background: #fff9c4; color: #7c6200; }
+.tag.purple { background: #ede7f6; color: #4a148c; }
+.tag.white { background: #e8f5e9; color: #1b5e20; }
+
+/* SEARCH */
+#view-search .search-box { display: flex; gap: 8px; margin-bottom: 16px; }
+#view-search input { flex: 1; padding: 10px 16px; border-radius: 25px; border: 2px solid #e91e8c; font-size: 1rem; outline: none; }
+#view-search button { padding: 10px 20px; border-radius: 25px; background: #e91e8c; color: white; border: none; cursor: pointer; font-size: 0.9rem; }
+.search-results { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.result-card { background: white; border-radius: 10px; padding: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); cursor: pointer; transition: transform 0.2s; text-align: center; }
+.result-card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(233,30,140,0.25); }
+.result-card .flower-emoji { font-size: 2.2rem; display: block; margin-bottom: 6px; }
+.result-card h4 { color: #880e4f; font-size: 0.95rem; margin-bottom: 4px; }
+.result-card .months-mini { font-size: 0.72rem; color: #888; }
+
+/* CATEGORY */
+#view-category .cat-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.cat-btn { padding: 8px 18px; border-radius: 20px; border: none; cursor: pointer; font-size: 0.85rem; font-weight: 600; transition: opacity 0.2s; }
+.cat-btn:hover { opacity: 0.8; }
+.cat-btn.pink-btn { background: #e91e8c; color: white; }
+.cat-btn.yellow-btn { background: #f9a825; color: white; }
+.cat-btn.purple-btn { background: #7b1fa2; color: white; }
+.cat-btn.white-btn { background: #2e7d32; color: white; }
+.cat-display { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.cat-display h3 { margin-bottom: 14px; color: #6a0080; font-size: 1.1rem; }
+.cat-month-row { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid #eee; }
+.cat-month-row .mon { font-weight: 700; min-width: 90px; color: #880e4f; font-size: 0.85rem; }
+.cat-month-row .items { display: flex; flex-wrap: wrap; gap: 4px; }
+
+/* TIMELINE */
+.timeline-grid { overflow-x: auto; }
+table.tl { border-collapse: collapse; width: 100%; background: white; border-radius: 10px; overflow: hidden; font-size: 0.8rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+table.tl th { background: #9b59b6; color: white; padding: 8px 10px; text-align: center; white-space: nowrap; }
+table.tl td { border: 1px solid #e0e0e0; padding: 6px 8px; text-align: center; }
+table.tl td.veg-name { text-align: left; font-weight: 600; color: #6a0080; white-space: nowrap; padding-left: 12px; cursor: pointer; }
+table.tl td.veg-name:hover { color: #e91e8c; text-decoration: underline; }
+table.tl td.yes { background: #e91e8c; }
+table.tl tr:nth-child(even) td { background-color: #fdf5ff; }
+table.tl tr:nth-child(even) td.yes { background: #e91e8c; }
+table.tl tr:hover td { background-color: #fce4ec; }
+table.tl tr:hover td.yes { background: #c2185b; }
+
+/* CARE */
+.care-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.care-card { border-radius: 12px; padding: 16px; color: white; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }
+.care-card h3 { font-size: 1rem; margin-bottom: 10px; }
+.flower-tag { background: rgba(255,255,255,0.25); border-radius: 10px; padding: 3px 9px; font-size: 0.75rem; display: inline-block; margin: 2px; }
+
+/* ===== MODAL ===== */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 1000; align-items: center; justify-content: center; padding: 16px; }
+.modal-overlay.open { display: flex; }
+.modal { background: white; border-radius: 18px; width: 100%; max-width: 620px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: popIn 0.25s ease; }
+@keyframes popIn { from { transform: scale(0.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+.modal-img { width: 100%; height: 220px; object-fit: cover; border-radius: 18px 18px 0 0; background: #f3e5f5; display: flex; align-items: center; justify-content: center; font-size: 6rem; }
+.modal-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px 18px 0 0; }
+.modal-img-placeholder { width: 100%; height: 220px; background: linear-gradient(135deg, #f3e5f5, #fce4ec); border-radius: 18px 18px 0 0; display: flex; align-items: center; justify-content: center; font-size: 6rem; }
+.modal-body { padding: 20px; }
+.modal-close { float: right; background: #e91e8c; color: white; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer; line-height: 32px; text-align: center; }
+.modal h2 { font-size: 1.4rem; color: #7b1fa2; margin-bottom: 4px; }
+.modal .modal-subtitle { color: #999; font-size: 0.82rem; margin-bottom: 14px; }
+.modal-section { margin-bottom: 14px; }
+.modal-section h4 { font-size: 0.85rem; font-weight: 700; color: #880e4f; margin-bottom: 6px; border-bottom: 2px solid #fce4ec; padding-bottom: 3px; }
+.modal-section p, .modal-section li { font-size: 0.83rem; line-height: 1.8; color: #333; }
+.modal-section ul { padding-left: 16px; }
+.modal-months { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.modal-month-tag { background: #fce4ec; color: #880e4f; border-radius: 10px; padding: 3px 10px; font-size: 0.75rem; font-weight: 600; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.info-box { background: #fdf5ff; border-radius: 8px; padding: 8px 12px; font-size: 0.78rem; }
+.info-box b { display: block; color: #7b1fa2; font-size: 0.7rem; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌸 ফুল চাষের বর্ষপঞ্জি</h1>
+  <p>বাংলাদেশ ফুল চাষ ক্যালেন্ডার — ইন্টারেক্টিভ গাইড</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('month',this)">📅 মাস অনুযায়ী</button>
+  <button class="tab" onclick="switchTab('search',this)">🔍 ফুল খুঁজুন</button>
+  <button class="tab" onclick="switchTab('category',this)">🗂️ ধরন অনুযায়ী</button>
+  <button class="tab" onclick="switchTab('timeline',this)">📊 টাইমলাইন</button>
+  <button class="tab" onclick="switchTab('care',this)">🌿 পরিচর্যা টিপস</button>
+</div>
+
+<div class="content">
+  <div id="view-month" class="view-section active">
+    <div class="tip">🌸 যেকোনো ফুলের ট্যাগে ক্লিক করুন বিস্তারিত দেখতে</div>
+    <div class="month-grid" id="monthGrid"></div>
+  </div>
+  <div id="view-search" class="view-section">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="ফুলের নাম লিখুন... যেমন: গোলাপ, গাঁদা, রজনীগন্ধা" oninput="doSearch()">
+      <button onclick="doSearch()">খুঁজুন</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+  <div id="view-category" class="view-section">
+    <div class="cat-buttons">
+      <button class="cat-btn pink-btn" onclick="showCat('commercial')">🌹 বাণিজ্যিক ফুল</button>
+      <button class="cat-btn yellow-btn" onclick="showCat('seasonal')">🌼 মৌসুমি ফুল</button>
+      <button class="cat-btn purple-btn" onclick="showCat('perennial')">🌺 বহুবর্ষজীবী ফুল</button>
+      <button class="cat-btn white-btn" onclick="showCat('ornamental')">🌿 অলংকারী ফুল</button>
+    </div>
+    <div class="cat-display" id="catDisplay"><p style="color:#888;text-align:center;">উপরে একটি ধরন নির্বাচন করুন</p></div>
+  </div>
+  <div id="view-timeline" class="view-section">
+    <div class="tip">ফুলের নামে ক্লিক করলে বিস্তারিত দেখাবে | গোলাপি = লাগানোর সময়</div>
+    <div class="timeline-grid" id="timelineGrid"></div>
+  </div>
+  <div id="view-care" class="view-section">
+    <div class="tip">ফুল চাষের গুরুত্বপূর্ণ পরিচর্যা তথ্য</div>
+    <div class="care-cards" id="careCards"></div>
+    <div style="background:white;border-radius:12px;padding:16px;margin-top:14px;box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+      <h3 style="color:#6a0080;margin-bottom:10px;">⚠️ গুরুত্বপূর্ণ পরিচর্যা টিপস</h3>
+      <ul style="padding-left:18px;font-size:0.85rem;line-height:2.2;">
+        <li>ফুলের চারা সকালে বা বিকেলে লাগানো উচিত — রোদের তীব্রতা কম থাকে বলে চারা সহজে মানিয়ে নেয়।</li>
+        <li>গোলাপ ও গ্লাডিওলাস প্রতি সপ্তাহে ছাঁটাই করলে বেশি ফুল আসে এবং গাছ সুস্থ থাকে।</li>
+        <li>গাঁদা ও কসমস ফুল দ্রুত বীজ থেকে বাড়ে — সরাসরি জমিতে বীজ ছড়িয়ে দেওয়া যায়।</li>
+        <li>রজনীগন্ধা ও গ্লাডিওলাসের কন্দ/বাল্ব বর্ষার পর তুলে শুকিয়ে সংরক্ষণ করতে হয়।</li>
+        <li>ড্রিপ সেচ ব্যবহার করলে পানির অপচয় কমে এবং ফুলের মান ভালো থাকে।</li>
+        <li>জৈব সার ব্যবহার করলে ফুলের রঙ উজ্জ্বল হয় এবং সুগন্ধ বৃদ্ধি পায়।</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modalBox">
+    <div id="modalImgWrap"></div>
+    <div class="modal-body">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 id="mName"></h2>
+      <div class="modal-subtitle" id="mSub"></div>
+      <div class="info-grid" id="mInfoGrid"></div>
+      <div class="modal-section" id="mMonthSec">
+        <h4>📅 লাগানোর সময়</h4>
+        <div class="modal-months" id="mMonths"></div>
+      </div>
+      <div class="modal-section">
+        <h4>🌱 চাষ পদ্ধতি</h4>
+        <p id="mMethod"></p>
+      </div>
+      <div class="modal-section">
+        <h4>💧 পরিচর্যা</h4>
+        <ul id="mCare"></ul>
+      </div>
+      <div class="modal-section">
+        <h4>🌾 মাটি ও সার</h4>
+        <p id="mSoil"></p>
+      </div>
+      <div class="modal-section">
+        <h4>⚠️ রোগ-পোকা</h4>
+        <p id="mPest"></p>
+      </div>
+      <div class="modal-section">
+        <h4>💰 বাজার ও ব্যবহার</h4>
+        <p id="mMarket"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="text-align:center;padding:18px 10px;background:#35094f;color:#d7a8ef;font-size:0.85rem;margin-top:20px;">
+  Prepared by <a href="https://sabujkundu.com" target="_blank" style="color:#e91e8c;font-weight:600;text-decoration:none;">Sabuj Kundu</a>
+  with help of <a href="https://claude.ai/public/artifacts/f6aff94a-0414-4973-9125-95c41edcbfcf" target="_blank" style="color:#e91e8c;font-weight:600;text-decoration:none;">claude.ai</a>
+</footer>
+
+<script>
+// ===== MONTH DATA =====
+const DATA = [
+  { month:"জানুয়ারি", bangla:"পৌষ-মাঘ", commercial:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা"], seasonal:["ডেইজি","পপি","স্ন্যাপড্রাগন","প্যানজি","এলিসাম"], perennial:["রজনীগন্ধা","কামিনী","বেলি"], ornamental:["সালভিয়া","ডায়ান্থাস","ক্যালেন্ডুলা"] },
+  { month:"ফেব্রুয়ারি", bangla:"মাঘ-ফাল্গুন", commercial:["গোলাপ","গ্লাডিওলাস","জারবেরা"], seasonal:["গাঁদা","ডেইজি","পপি","কসমস"], perennial:["রজনীগন্ধা","হাস্নাহেনা","বেলি"], ornamental:["পেটুনিয়া","ভার্বেনা","আইপোমিয়া"] },
+  { month:"মার্চ", bangla:"ফাল্গুন-চৈত্র", commercial:["গোলাপ","জারবেরা","রজনীগন্ধা"], seasonal:["গাঁদা","কসমস","জিনিয়া","সূর্যমুখী"], perennial:["হাস্নাহেনা","কামিনী","কাঠগোলাপ"], ornamental:["পোর্টুলাকা","ভিঞ্চা","বালসাম"] },
+  { month:"এপ্রিল", bangla:"চৈত্র-বৈশাখ", commercial:["রজনীগন্ধা","জারবেরা","গ্লাডিওলাস"], seasonal:["গাঁদা","জিনিয়া","সূর্যমুখী","কসমস"], perennial:["হাস্নাহেনা","কাঠগোলাপ","করবী"], ornamental:["পোর্টুলাকা","বালসাম","কেলিয়া"] },
+  { month:"মে", bangla:"বৈশাখ-জ্যৈষ্ঠ", commercial:["রজনীগন্ধা","জারবেরা","গোলাপ"], seasonal:["জিনিয়া","সূর্যমুখী","গাঁদা"], perennial:["হাস্নাহেনা","করবী","কাঠগোলাপ","বোগেনভিলিয়া"], ornamental:["পোর্টুলাকা","ভিঞ্চা","ইম্পেশেন্স"] },
+  { month:"জুন", bangla:"জ্যৈষ্ঠ-আষাঢ়", commercial:["রজনীগন্ধা","গোলাপ","জারবেরা"], seasonal:["জিনিয়া","সূর্যমুখী","গাঁদা"], perennial:["হাস্নাহেনা","করবী","বোগেনভিলিয়া","জবা"], ornamental:["ভিঞ্চা","ইম্পেশেন্স","অ্যান্টিরিনাম"] },
+  { month:"জুলাই", bangla:"আষাঢ়-শ্রাবণ", commercial:["রজনীগন্ধা","গোলাপ","জারবেরা"], seasonal:["গাঁদা","জিনিয়া","সূর্যমুখী"], perennial:["হাস্নাহেনা","জবা","করবী","বোগেনভিলিয়া"], ornamental:["ভিঞ্চা","ইম্পেশেন্স","টর্চ জিঞ্জার"] },
+  { month:"আগস্ট", bangla:"শ্রাবণ-ভাদ্র", commercial:["রজনীগন্ধা","গোলাপ","গ্লাডিওলাস"], seasonal:["গাঁদা","কসমস","জিনিয়া"], perennial:["হাস্নাহেনা","জবা","বোগেনভিলিয়া"], ornamental:["ভিঞ্চা","সালভিয়া","ক্যালেন্ডুলা"] },
+  { month:"সেপ্টেম্বর", bangla:"ভাদ্র-আশ্বিন", commercial:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা"], seasonal:["গাঁদা","কসমস","চন্দ্রমল্লিকা","ডেইজি"], perennial:["রজনীগন্ধা","কামিনী","বেলি"], ornamental:["ক্যালেন্ডুলা","পপি","ডায়ান্থাস"] },
+  { month:"অক্টোবর", bangla:"আশ্বিন-কার্তিক", commercial:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা","জারবেরা"], seasonal:["গাঁদা","চন্দ্রমল্লিকা","কসমস","ডেইজি","পপি"], perennial:["রজনীগন্ধা","কামিনী","বেলি"], ornamental:["ক্যালেন্ডুলা","প্যানজি","স্ন্যাপড্রাগন","এলিসাম"] },
+  { month:"নভেম্বর", bangla:"কার্তিক-অগ্রহায়ণ", commercial:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা"], seasonal:["গাঁদা","চন্দ্রমল্লিকা","ডেইজি","পপি","স্ন্যাপড্রাগন"], perennial:["কামিনী","বেলি","হাস্নাহেনা"], ornamental:["প্যানজি","এলিসাম","ক্যালেন্ডুলা","লুপিন","ভার্বেনা"] },
+  { month:"ডিসেম্বর", bangla:"অগ্রহায়ণ-পৌষ", commercial:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা"], seasonal:["গাঁদা","ডেইজি","পপি","স্ন্যাপড্রাগন","প্যানজি"], perennial:["কামিনী","বেলি","হাস্নাহেনা"], ornamental:["এলিসাম","ক্যালেন্ডুলা","ভার্বেনা","ডায়ান্থাস","লুপিন"] }
+];
+
+// ===== FLOWER DETAILS DB =====
+const FLOWERS = {
+  "গোলাপ": {
+    emoji:"🌹", en:"Rose", cat:"বাণিজ্যিক ফুল",
+    info:{ উচ্চতা:"৬০–১৫০ সেমি", রোপণ:"কাটিং/গ্রাফটিং", ফুল_ধরে:"৪৫–৬০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Rose_pink_rose.jpg/640px-Rose_pink_rose.jpg",
+    method:"গোলাপের কাটিং ১৫–২০ সেমি লম্বা করে কেটে নিচের পাতা ফেলে দিন। কাটিং-এর নিচের অংশ তির্যকভাবে কেটে রুটিং হরমোন (IBA) লাগিয়ে বেলে-দোআঁশ মাটিতে পুঁতুন। ছায়াযুক্ত স্থানে রেখে নিয়মিত পানি দিন। ৩–৪ সপ্তাহে শিকড় গজায়। বাণিজ্যিকভাবে T-বডিং গ্রাফটিং পদ্ধতি বেশি ব্যবহৃত হয়।",
+    care:["প্রতিদিন সকালে গোড়ায় পানি দিন, পাতায় নয়","প্রতি ১৫ দিনে একবার NPK সার দিন","ফুল ঝরে গেলে ডেডহেডিং করুন","মাসে একবার ছাঁটাই করলে বেশি ফুল আসে"],
+    soil:"দোআঁশ বা বেলে-দোআঁশ মাটি সবচেয়ে ভালো। pH ৬.০–৬.৫। প্রতি গর্তে ২ কেজি পচা গোবর, ১০০ গ্রাম TSP ও ৫০ গ্রাম MP মিশিয়ে দিন।",
+    pest:"কালো দাগ রোগ (Black Spot): ম্যানকোজেব স্প্রে করুন। লাল মাকড়: ইমামেকটিন বেনজোয়েট ব্যবহার করুন। থ্রিপস: ইমিডাক্লোপ্রিড স্প্রে দিন।",
+    market:"বাংলাদেশে গোলাপের বড় বাজার ঢাকা, চট্টগ্রাম ও সিলেটে। ভালেন্টাইন্স ডে, ঈদ ও বিভিন্ন অনুষ্ঠানে চাহিদা তুঙ্গে থাকে। প্রতি ডজন ১৫০–৫০০ টাকায় বিক্রি হয়।"
+  },
+  "গাঁদা": {
+    emoji:"🌼", en:"Marigold", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৩০–৯০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৪৫–৫০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Marigold_flowers_in_a_garden.jpg/640px-Marigold_flowers_in_a_garden.jpg",
+    method:"বীজ থেকে সহজেই চারা তৈরি করা যায়। বীজ বেডে বুনে ২–৩ সপ্তাহ পর মূল জমিতে লাগান। সারিতে ৩০×৩০ সেমি দূরত্বে চারা রোপণ করুন। সরাসরি জমিতেও বীজ ছিটিয়ে দেওয়া যায়।",
+    care:["সপ্তাহে ২–৩ বার সেচ দিন","ফুল ঝরে গেলে সাথে সাথে তুলুন","চারা ১৫ সেমি হলে আগা ছেঁটে দিন (বেশি শাখা হবে)","মাসে একবার ইউরিয়া সার দিন"],
+    soil:"যেকোনো উর্বর মাটিতে জন্মায়। pH ৬.০–৭.০। জলাবদ্ধতা সহ্য করে না। হালকা জৈব সার মিশিয়ে নিন।",
+    pest:"মূলত রোগবালাই কম। মাঝে মাঝে পাউডারি মিলডিউ দেখা যায় — সালফার পাউডার ছিটান। মাকড় পোকায় আক্রান্ত হলে নিম তেল স্প্রে করুন।",
+    market:"পূজা, বিয়ে, বিভিন্ন উৎসবে প্রচুর চাহিদা। মালা তৈরিতে সর্বাধিক ব্যবহৃত। প্রতি ১০০ ফুল ৫০–২০০ টাকায় বিক্রি হয়। যশোর জেলায় সবচেয়ে বেশি চাষ হয়।"
+  },
+  "রজনীগন্ধা": {
+    emoji:"🤍", en:"Tuberose", cat:"বাণিজ্যিক ফুল",
+    info:{ উচ্চতা:"৬০–১০০ সেমি", রোপণ:"কন্দ (Bulb)", ফুল_ধরে:"৯০–১২০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Polianthes_tuberosa_flowers.jpg/640px-Polianthes_tuberosa_flowers.jpg",
+    method:"কন্দ থেকে চাষ হয়। প্রতিটি কন্দ ৩–৫ সেমি গভীরে, ২০×২৫ সেমি দূরত্বে লাগান। অগ্রহায়ণ–পৌষে কন্দ তুলে শুকিয়ে সংরক্ষণ করুন এবং ফাল্গুন–চৈত্রে পুনরায় রোপণ করুন।",
+    care:["১৫ দিন পর পর সেচ দিন","কন্দ লাগানোর ৩০ দিন পর প্রথম সার দিন","ফুল ফোটার পর ডাঁটা কেটে দিন — নতুন ফুল আসবে","জলাবদ্ধতা এড়িয়ে চলুন"],
+    soil:"দোআঁশ ও বেলে-দোআঁশ মাটি আদর্শ। pH ৬.৫–৭.৫। প্রতি শতাংশে ৪০ কেজি গোবর, ৪০০ গ্রাম TSP ও ২০০ গ্রাম MOP দিন।",
+    pest:"পাতায় দাগ রোগ: ম্যানকোজেব স্প্রে করুন। থ্রিপস ও মাকড়: ইমিডাক্লোপ্রিড ব্যবহার করুন।",
+    market:"মালা, স্প্রে, গাজরা তৈরিতে ব্যাপক ব্যবহার। বিয়ে ও পূজায় সর্বাধিক চাহিদা। প্রতি স্টিক ৫–১৫ টাকায় বিক্রি হয়। বাংলাদেশে বছরে ৩০০+ কোটি টাকার বাজার।"
+  },
+  "গ্লাডিওলাস": {
+    emoji:"💜", en:"Gladiolus", cat:"বাণিজ্যিক ফুল",
+    info:{ উচ্চতা:"৮০–১৫০ সেমি", রোপণ:"কর্ম/বাল্ব", ফুল_ধরে:"৭০–৯০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Gladiolus_gandavensis2.jpg/640px-Gladiolus_gandavensis2.jpg",
+    method:"বাল্ব (কর্ম) থেকে চাষ হয়। ৮–১০ সেমি গভীরে, ২০×৩০ সেমি দূরত্বে লাগান। ফুল কাটার পর বাল্ব তুলে শুকিয়ে ঠান্ডায় সংরক্ষণ করুন। প্রতি বছর নতুন বাল্ব ব্যবহার করলে ফুল ভালো হয়।",
+    care:["সপ্তাহে ২ বার সেচ দিন","শক্ত বাঁশের খুঁটি দিয়ে গাছ বেঁধে দিন","ফুল ফোটার সময় সেচ বাড়ান","বাল্ব তোলার পর ছত্রাকনাশকে ডুবিয়ে শুকান"],
+    soil:"হালকা দোআঁশ, সুনিষ্কাশিত মাটি। pH ৫.৫–৬.৫। জৈব সার বেশি দিলে ফুলের রঙ উজ্জ্বল হয়।",
+    pest:"Botrytis পচন: তামাযুক্ত ছত্রাকনাশক দিন। থ্রিপস: ইমিডাক্লোপ্রিড স্প্রে করুন। শিকড় পচা: জলাবদ্ধতা এড়িয়ে চলুন।",
+    market:"কাট ফ্লাওয়ার হিসেবে জনপ্রিয়। বিয়ে ও অনুষ্ঠান সজ্জায় ব্যাপক ব্যবহার। প্রতি স্টিক ১৫–৫০ টাকায় বিক্রি হয়।"
+  },
+  "জারবেরা": {
+    emoji:"🌺", en:"Gerbera", cat:"বাণিজ্যিক ফুল",
+    info:{ উচ্চতা:"৩০–৪৫ সেমি", রোপণ:"চারা/বীজ", ফুল_ধরে:"৬০–৯০ দিনে", আলো:"আধা রোদ-ছায়া" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Gerbera_daisy.jpg/640px-Gerbera_daisy.jpg",
+    method:"নার্সারি থেকে চারা কিনে লাগানো সহজ। উঁচু বেডে বা পলিহাউসে চাষ ভালো হয়। গাছের মুকুট মাটির সমতলে রাখুন — গভীরে গেলে পচে যাবে। সারিতে ৩০×৪০ সেমি দূরত্ব রাখুন।",
+    care:["সপ্তাহে ২–৩ বার সেচ দিন","পুরনো পাতা নিয়মিত ছাঁটুন","প্রতি মাসে সুক্ষ্ম সার (ফার্টিগেশন) দিন","আর্দ্র পরিবেশে ভালো ফুল আসে"],
+    soil:"হালকা, জৈব সারসমৃদ্ধ দোআঁশ মাটি। pH ৫.৫–৬.৫। কোকোপিট মিশিয়ে দিলে ভালো ফল মেলে।",
+    pest:"পাউডারি মিলডিউ: সালফার স্প্রে। লিফ মাইনার: সাইপারমেথ্রিন। শিকড় পচা: কার্বেন্ডাজিম দিন।",
+    market:"কাট ফ্লাওয়ার হিসেবে দেশে ও বিদেশে চাহিদা বাড়ছে। ফুলদানি ও বুকে ফুলে জনপ্রিয়। প্রতি স্টিক ২০–৬০ টাকায় বিক্রি হয়। পলিহাউসে সারা বছর চাষ সম্ভব।"
+  },
+  "চন্দ্রমল্লিকা": {
+    emoji:"🌸", en:"Chrysanthemum", cat:"বাণিজ্যিক ফুল",
+    info:{ উচ্চতা:"৪৫–১২০ সেমি", রোপণ:"কাটিং/চারা", ফুল_ধরে:"৬০–৯০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Chrysanthemum_2012-10-26_001.jpg/640px-Chrysanthemum_2012-10-26_001.jpg",
+    method:"আগস্ট–অক্টোবরে কাটিং নিয়ে চারা তৈরি করুন। ১০–১৫ সেমি কাটিং নিয়ে রুটিং মিডিয়ামে লাগান। শিকড় গজালে ৩০×৪০ সেমি দূরত্বে মূল জমিতে রোপণ করুন।",
+    care:["চারা ২০ সেমি হলে আগা চিমটি কাটুন","সপ্তাহে একবার পানিতে গুলে NPK দিন","মাথায় পানি না লাগে সেভাবে সেচ দিন","ফুল ধরার সময় পটাশ সার বাড়ান"],
+    soil:"উর্বর দোআঁশ মাটি। pH ৬.০–৭.০। উঁচু বেডে চাষ করলে জলাবদ্ধতা থেকে রক্ষা পাবে।",
+    pest:"মরিচা রোগ: ট্রাইসাইক্লাজোল স্প্রে। জাব পোকা: ডায়াজিনন ব্যবহার করুন। লিফ স্পট: ম্যানকোজেব দিন।",
+    market:"শীতকালীন ফুলের বাজারে সবচেয়ে জনপ্রিয়। বিজয় দিবস, শহীদ দিবসে প্রচুর চাহিদা। প্রতি ডজন ৬০–২০০ টাকায় বিক্রি হয়।"
+  },
+  "হাস্নাহেনা": {
+    emoji:"🌙", en:"Night Jasmine / Queen of Night", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"২–৪ মিটার", রোপণ:"কাটিং/চারা", ফুল_ধরে:"সারা বছর", আলো:"আধা ছায়া" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cestrum_nocturnum_flowers.jpg/640px-Cestrum_nocturnum_flowers.jpg",
+    method:"কাটিং থেকে সহজেই চারা তৈরি হয়। ১৫–২০ সেমি কাটিং নিয়ে ছায়াযুক্ত স্থানে বা পানিতে শিকড় করুন। গাছ একবার লাগালে বহু বছর থাকে।",
+    care:["সপ্তাহে ২–৩ বার পানি দিন","বছরে একবার ছাঁটাই করুন","জৈব সার বছরে দুইবার দিন","অতিরিক্ত রোদ থেকে রক্ষা করুন"],
+    soil:"যেকোনো উর্বর মাটিতে জন্মায়। জলাবদ্ধতা সহ্য করে না।",
+    pest:"মূলত রোগমুক্ত। মাঝে মাঝে মেলিবাগ আক্রমণ করে — নিম তেল স্প্রে দিন।",
+    market:"সুগন্ধি শিল্পে ব্যবহার। বাগান ও ছাদ বাগানে সৌন্দর্যের জন্য চাষ হয়। ফুল দিয়ে আতর ও এসেনশিয়াল অয়েল তৈরি হয়।"
+  },
+  "বেলি": {
+    emoji:"🤍", en:"Jasmine (Arabian)", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"৩০–১০০ সেমি", রোপণ:"কাটিং/লেয়ারিং", ফুল_ধরে:"সারা বছর (গ্রীষ্মে বেশি)", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Jasminum_sambac_Wannakorn.jpg/640px-Jasminum_sambac_Wannakorn.jpg",
+    method:"ডালের কাটিং বা গুটি কলম পদ্ধতিতে চারা তৈরি করুন। জানুয়ারি–ফেব্রুয়ারি বা সেপ্টেম্বর–অক্টোবর রোপণের আদর্শ সময়।",
+    care:["গ্রীষ্মে প্রতিদিন সকালে পানি দিন","প্রতি ২ মাসে একবার সার দিন","ফুল ঝরার পর ডাল ছাঁটুন","টবে লাগালে প্রতি বছর মাটি বদলান"],
+    soil:"দোআঁশ বা বেলে-দোআঁশ মাটি। pH ৬.০–৭.০। জৈব সারসমৃদ্ধ মাটিতে বেশি ফুল আসে।",
+    pest:"জাব পোকা ও মাকড়: নিম তেল স্প্রে। পাতায় দাগ রোগ: ম্যানকোজেব দিন।",
+    market:"মালা, গাজরা, কানফুল তৈরিতে ব্যাপক ব্যবহার। সুগন্ধি ও ধর্মীয় কাজে ব্যবহৃত। ১০০ ফুল ৩০–১০০ টাকায় বিক্রি হয়।"
+  },
+  "সূর্যমুখী": {
+    emoji:"🌻", en:"Sunflower", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"১–৩ মিটার", রোপণ:"বীজ", ফুল_ধরে:"৬০–৭৫ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sunflower_sky_backdrop.jpg/640px-Sunflower_sky_backdrop.jpg",
+    method:"সরাসরি বীজ জমিতে বুনুন। ৩–৪ সেমি গভীরে, ৪৫×৬০ সেমি দূরত্বে বীজ বুনুন। অঙ্কুরোদগমে ৭–১০ দিন লাগে। বীজ ভিজিয়ে নিলে দ্রুত গজায়।",
+    care:["সপ্তাহে ২ বার গভীর সেচ দিন","ফুল ধরার আগে একবার পটাশ সার দিন","লম্বা গাছ খুঁটি দিয়ে বেঁধে দিন","অতিরিক্ত পানি দেবেন না"],
+    soil:"সুনিষ্কাশিত দোআঁশ মাটি। pH ৬.০–৭.৫। ভারী জমিতে ভালো জন্মায় না।",
+    pest:"মূলত রোগমুক্ত। পাতা পোড়া রোগ: তামার ছত্রাকনাশক। ক্যাটারপিলার: কার্বারিল স্প্রে।",
+    market:"তেলবীজ ফসল হিসেবেও চাষ হয়। কাট ফ্লাওয়ার ও সৌন্দর্যের জন্য জনপ্রিয়। ইকো-ট্যুরিজমে সূর্যমুখী বাগান আকর্ষণীয়।"
+  },
+  "কসমস": {
+    emoji:"🌸", en:"Cosmos", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৬০–১৫০ সেমি", রোপণ:"বীজ", ফুল_ধরে:"৫০–৬০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Cosmos_sulphureus_2.jpg/640px-Cosmos_sulphureus_2.jpg",
+    method:"সরাসরি বীজ বুনুন বা ট্রেতে চারা তৈরি করুন। ৩০×৩০ সেমি দূরত্বে চারা লাগান। বেশি সার না দিলে বেশি ফুল আসে।",
+    care:["কম পানিতেও ভালো জন্মায়","বেশি নাইট্রোজেন দেবেন না — পাতা বাড়বে ফুল কমবে","ডেডহেডিং করলে দীর্ঘদিন ফুল আসে"],
+    soil:"যেকোনো মাটিতে জন্মায়, এমনকি দরিদ্র মাটিতেও। ভালো নিষ্কাশন দরকার।",
+    pest:"মূলত রোগমুক্ত। অতিরিক্ত আর্দ্রতায় পচন ধরে।",
+    market:"বাগান সাজাতে ও কাট ফ্লাওয়ার হিসেবে ব্যবহার হয়। সহজে চাষযোগ্য ও কম খরচে বেশি ফুল পাওয়া যায়।"
+  },
+  "জিনিয়া": {
+    emoji:"🌺", en:"Zinnia", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৩০–১০০ সেমি", রোপণ:"বীজ", ফুল_ধরে:"৪৫–৫৫ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Zinnia_elegans_flowers.jpg/640px-Zinnia_elegans_flowers.jpg",
+    method:"বীজ থেকে সহজেই চারা হয়। ২–৩ সেমি গভীরে বীজ বুনুন। ৭–১০ দিনে গজায়। ৩০×৩০ সেমি দূরত্বে চারা লাগান।",
+    care:["সপ্তাহে ২–৩ বার পানি দিন","পাতায় পানি না লাগানো ভালো","ডেডহেডিং করলে দীর্ঘদিন ফুল পাবেন","১৫ দিনে একবার সুষম সার দিন"],
+    soil:"উর্বর, সুনিষ্কাশিত মাটি। pH ৫.৫–৭.০।",
+    pest:"পাউডারি মিলডিউ গরমে দেখা দেয়: সালফার স্প্রে দিন। জাব পোকা: নিম তেল কার্যকর।",
+    market:"বাগান সাজাতে ও গুচ্ছ ফুল হিসেবে জনপ্রিয়। রঙের বৈচিত্র্যের কারণে ইন্টেরিয়র ডেকোরে ব্যবহার হয়।"
+  },
+  "বোগেনভিলিয়া": {
+    emoji:"🌿", en:"Bougainvillea", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"১–১২ মিটার (লতা)", রোপণ:"কাটিং", ফুল_ধরে:"সারা বছর", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Bougainvillea_glabra.jpg/640px-Bougainvillea_glabra.jpg",
+    method:"শক্ত কাঠের কাটিং ২০–২৫ সেমি লম্বা নিয়ে রুটিং হরমোন লাগিয়ে বালিতে পুঁতুন। ছায়ায় রাখুন ৪–৬ সপ্তাহ। শিকড় গজালে মূল স্থানে লাগান।",
+    care:["খরা সহিষ্ণু — কম পানিতেই চলে","ফুল আসার আগে পানি কমিয়ে দিন — বেশি ফুল আসবে","প্রতি বছর ছাঁটাই করুন","পটাশ ও ফসফরাস সার বেশি দিন"],
+    soil:"যেকোনো সুনিষ্কাশিত মাটিতে জন্মায়। লবণাক্ততা সহ্য করে। pH ৫.৫–৬.৫।",
+    pest:"মেলিবাগ ও মাকড়: ইমিডাক্লোপ্রিড স্প্রে। পাতার দাগ রোগ: তামার ছত্রাকনাশক।",
+    market:"বাগান, ছাদ বাগান ও ল্যান্ডস্কেপিংয়ে ব্যাপকভাবে ব্যবহৃত। নার্সারিতে গাছের ভালো দাম পাওয়া যায়।"
+  },
+  "জবা": {
+    emoji:"🌺", en:"Hibiscus", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"১–৩ মিটার", রোপণ:"কাটিং/কলম", ফুল_ধরে:"সারা বছর", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/PNG-Hibiscus_rosa-sinensis-flower-June2008.jpg/640px-PNG-Hibiscus_rosa-sinensis-flower-June2008.jpg",
+    method:"কাটিং থেকে সহজেই চারা হয়। বর্ষার আগে বা পরে রোপণ করুন। টবে বা জমিতে উভয়ে চাষ করা যায়।",
+    care:["প্রতিদিন পানি দিন","মাসে একবার সার দিন","নিয়মিত ছাঁটাই করলে বেশি ফুল আসে","শীতে পানি কমিয়ে দিন"],
+    soil:"দোআঁশ মাটি, pH ৬.০–৭.০। জৈব সার মিশিয়ে নিন।",
+    pest:"এফিড ও মেলিবাগ সাধারণ সমস্যা। নিম তেল স্প্রে কার্যকর। পাতার দাগ রোগে ম্যানকোজেব দিন।",
+    market:"ধর্মীয় কাজে ও পূজায় ব্যবহার। ভেষজ গুণের কারণে চাহিদা আছে। কেশ তেল ও শ্যাম্পু তৈরিতে ব্যবহৃত।"
+  },
+  "করবী": {
+    emoji:"🌸", en:"Oleander", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"২–৫ মিটার", রোপণ:"কাটিং/বীজ", ফুল_ধরে:"সারা বছর", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Nerium_oleander_flowers_leaves.jpg/640px-Nerium_oleander_flowers_leaves.jpg",
+    method:"কাটিং পানিতে রেখে শিকড় গজানোর পর মাটিতে লাগান। খরা ও তীব্র রোদ সহ্য করতে পারে।",
+    care:["কম পানিতেও ভালো জন্মায়","বছরে একবার ছাঁটাই করুন","জৈব সার বছরে দুইবার দিন"],
+    soil:"যেকোনো মাটিতে জন্মায়। লবণাক্ততা সহিষ্ণু।",
+    pest:"মূলত রোগমুক্ত। মেলিবাগ হলে নিম তেল দিন। ⚠️ সব অংশ বিষাক্ত — সতর্কতার সাথে পরিচালনা করুন।",
+    market:"ল্যান্ডস্কেপিং ও রাস্তার পাশে সৌন্দর্যের জন্য ব্যাপকভাবে ব্যবহৃত।"
+  },
+  "কাঠগোলাপ": {
+    emoji:"🌸", en:"Frangipani / Plumeria", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"২–৮ মিটার", রোপণ:"কাটিং/বীজ", ফুল_ধরে:"গ্রীষ্ম-বর্ষায়", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Plumeria_rubra.jpg/640px-Plumeria_rubra.jpg",
+    method:"ডালের কাটিং ৩–৪ সপ্তাহ ছায়ায় শুকিয়ে তারপর মাটিতে লাগান। গভীর শিকড়ের জন্য বড় গর্ত করুন।",
+    care:["কম পানিতেও টিকে থাকে","শীতে পানি একদম কমিয়ে দিন","বছরে একবার সার দিলেই চলে"],
+    soil:"সুনিষ্কাশিত যেকোনো মাটি। জলাবদ্ধতায় শিকড় পচে।",
+    pest:"মূলত রোগমুক্ত। জং রোগ: তামার ছত্রাকনাশক। মেলিবাগ: নিম তেল।",
+    market:"ধর্মীয় অনুষ্ঠান ও বাগান সজ্জায় ব্যবহৃত। ফুলের সুগন্ধ থেকে আতর তৈরি হয়।"
+  },
+  "পপি": {
+    emoji:"🌺", en:"Poppy", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৩০–৯০ সেমি", রোপণ:"বীজ", ফুল_ধরে:"৬০–৭০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Papaver_rhoeas_in_Segovia_2.jpg/640px-Papaver_rhoeas_in_Segovia_2.jpg",
+    method:"অক্টোবর–নভেম্বরে সরাসরি জমিতে বীজ ছিটান। বীজ অত্যন্ত ছোট বলে বালির সাথে মিশিয়ে ছিটালে ভালো হয়।",
+    care:["কম পানি দিন","বেশি সার দেবেন না","রোপণের পর আর সরানো যায় না"],
+    soil:"হালকা, সুনিষ্কাশিত মাটি। pH ৬.০–৭.০।",
+    pest:"মূলত রোগমুক্ত। অতিরিক্ত আর্দ্রতায় মূল পচন দেখা দেয়।",
+    market:"শীতকালীন বাগান সাজাতে জনপ্রিয়। কাট ফ্লাওয়ার হিসেবেও ব্যবহার হয়।"
+  },
+  "ডেইজি": {
+    emoji:"🌼", en:"Daisy", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৩০–৬০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৬০–৭০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Beautiful_white_daisy.jpg/640px-Beautiful_white_daisy.jpg",
+    method:"সেপ্টেম্বর–অক্টোবরে বীজ বুনুন। ট্রেতে চারা তৈরি করে নভেম্বরে মূল জমিতে লাগান।",
+    care:["সপ্তাহে ২ বার পানি দিন","ডেডহেডিং করলে বেশিদিন ফুল থাকে","সুষম সার মাসে একবার দিন"],
+    soil:"দোআঁশ মাটি, pH ৬.০–৮.০। সুনিষ্কাশন জরুরি।",
+    pest:"এফিড ও থ্রিপস হতে পারে — নিম তেল ব্যবহার করুন।",
+    market:"শীতকালীন বাগান ও কাট ফ্লাওয়ার হিসেবে জনপ্রিয়।"
+  },
+  "কামিনী": {
+    emoji:"🌿", en:"Murraya (Orange Jasmine)", cat:"বহুবর্ষজীবী ফুল",
+    info:{ উচ্চতা:"১–৩ মিটার", রোপণ:"কাটিং/বীজ", ফুল_ধরে:"সারা বছর", আলো:"আধা ছায়া-রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Murraya_paniculata_0001.jpg/640px-Murraya_paniculata_0001.jpg",
+    method:"কাটিং থেকে চারা তৈরি করা সহজ। নার্সারি থেকে চারা কিনে সহজেই লাগানো যায়। হেজ (বেড়া) হিসেবেও চমৎকার।",
+    care:["নিয়মিত পানি দিন","বছরে দুইবার সার দিন","হেজ হিসেবে নিয়মিত ছাঁটাই করুন"],
+    soil:"যেকোনো মাটিতে জন্মায়। pH ৬.০–৭.৫।",
+    pest:"মূলত রোগমুক্ত। লিফ মাইনার হলে নিম তেল ব্যবহার করুন।",
+    market:"বাগান, ছাদ বাগান ও ল্যান্ডস্কেপিংয়ে ব্যবহৃত। নার্সারিতে চারার ভালো চাহিদা।"
+  },
+  "পেটুনিয়া": {
+    emoji:"💜", en:"Petunia", cat:"অলংকারী ফুল",
+    info:{ উচ্চতা:"১৫–৪৫ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৪০–৫৫ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Petunia_Surfinia_Dark_Blue.jpg/640px-Petunia_Surfinia_Dark_Blue.jpg",
+    method:"অক্টোবর–নভেম্বরে বীজ বুনুন। বীজ অত্যন্ত ছোট — বালির সাথে মিশিয়ে ট্রেতে বুনুন। ৪–৬ সপ্তাহে চারা প্রস্তুত।",
+    care:["সপ্তাহে ২–৩ বার পানি দিন","পাতায় পানি না লাগানোই ভালো","১৫ দিনে একবার তরল সার দিন","হ্যাঙ্গিং বাস্কেটে সুন্দর লাগে"],
+    soil:"হালকা, জৈব সারসমৃদ্ধ মাটি। pH ৬.০–৭.০।",
+    pest:"বোট্রাইটিস রোগ: বায়ু চলাচল বাড়ান। এফিড: নিম তেল স্প্রে।",
+    market:"টব, ঝুড়ি ও বাগান সজ্জায় অত্যন্ত জনপ্রিয়। নার্সারিতে ভালো দামে বিক্রি হয়।"
+  },
+  "সালভিয়া": {
+    emoji:"💙", en:"Salvia", cat:"অলংকারী ফুল",
+    info:{ উচ্চতা:"৩০–৯০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৬০–৭০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Salvia_splendens_common_name_scarlet_sage.jpg/640px-Salvia_splendens_common_name_scarlet_sage.jpg",
+    method:"অক্টোবর–নভেম্বরে চারা তৈরি করুন। ৩০×৩০ সেমি দূরত্বে লাগান।",
+    care:["নিয়মিত পানি দিন","ফুল ঝরলে ডেডহেডিং করুন","মাসে একবার সার দিন"],
+    soil:"উর্বর দোআঁশ মাটি, pH ৫.৫–৭.০।",
+    pest:"স্লাগ ও স্নেইল: লবণ ছিটান। মাকড়: মাইটিসাইড ব্যবহার করুন।",
+    market:"বাগান ও ফুলদানি সজ্জায় জনপ্রিয়।"
+  },
+  "ক্যালেন্ডুলা": {
+    emoji:"🌼", en:"Calendula / Pot Marigold", cat:"অলংকারী ফুল",
+    info:{ উচ্চতা:"৩০–৬০ সেমি", রোপণ:"বীজ", ফুল_ধরে:"৫০–৬০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Calendula_officinalis.jpg/640px-Calendula_officinalis.jpg",
+    method:"অক্টোবর–নভেম্বরে বীজ সরাসরি জমিতে বুনুন। পাতলা করে বুনলে পরে চারা তুলে সরানো যায়।",
+    care:["মাঝারি পানি দিন","ডেডহেডিং করলে বেশি ফুল আসে","বেশি সার না দিলেই চলে"],
+    soil:"যেকোনো মাটিতে জন্মায়। pH ৫.৫–৭.০।",
+    pest:"মূলত রোগমুক্ত। পাউডারি মিলডিউ হলে সালফার দিন।",
+    market:"ভেষজ ওষুধ ও প্রসাধনীতে ব্যবহার। বাগান সজ্জায় জনপ্রিয়।"
+  },
+  "স্ন্যাপড্রাগন": {
+    emoji:"🌷", en:"Snapdragon", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"৩০–৯০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৬০–৭০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Antirrhinum_majus_fleur.jpg/640px-Antirrhinum_majus_fleur.jpg",
+    method:"অক্টোবর–নভেম্বরে চারা তৈরি করুন। বীজ ট্রেতে বুনে পরে মূল বেডে লাগান।",
+    care:["সপ্তাহে ২–৩ বার পানি দিন","আগা চিমটি কাটলে বেশি ডাল আসে","মাসে একবার NPK দিন"],
+    soil:"উর্বর, সুনিষ্কাশিত মাটি, pH ৬.০–৭.০।",
+    pest:"মরিচা রোগ: ট্রাইফোরিন স্প্রে। বোট্রাইটিস: বায়ু চলাচল নিশ্চিত করুন।",
+    market:"কাট ফ্লাওয়ার ও বাগান সজ্জায় জনপ্রিয়।"
+  },
+  "প্যানজি": {
+    emoji:"💜", en:"Pansy", cat:"মৌসুমি ফুল",
+    info:{ উচ্চতা:"১৫–৩০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৫০–৬০ দিনে", আলো:"আধা রোদ-ছায়া" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Pansy_flowers.jpg/640px-Pansy_flowers.jpg",
+    method:"অক্টোবর–নভেম্বরে বীজ বুনুন। ঠান্ডা আবহাওয়ায় ভালো জন্মায়।",
+    care:["মাঝারি পানি দিন","ডেডহেডিং করুন নিয়মিত","ঠান্ডায় বেশি ফুল আসে"],
+    soil:"উর্বর মাটি, pH ৫.৫–৬.৫।",
+    pest:"স্লাগ: লবণ ছিটান। পাউডারি মিলডিউ: সালফার দিন।",
+    market:"শীতকালীন বাগান সজ্জায় অত্যন্ত জনপ্রিয়। নার্সারিতে ভালো চাহিদা।"
+  },
+  "পোর্টুলাকা": {
+    emoji:"🌸", en:"Portulaca / Moss Rose", cat:"অলংকারী ফুল",
+    info:{ উচ্চতা:"১০–২০ সেমি", রোপণ:"বীজ/কাটিং", ফুল_ধরে:"৩৫–৪৫ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Portulaca_grandiflora2.jpg/640px-Portulaca_grandiflora2.jpg",
+    method:"বসন্তে সরাসরি বীজ ছিটান বা ছোট কাটিং লাগান। খরা সহিষ্ণু।",
+    care:["কম পানিতেও চলে","রোদ পেলে বেশি ফুল আসে","বেশি পানি দিলে পচে যায়"],
+    soil:"বালুকাময় বা হালকা মাটিতে সবচেয়ে ভালো।",
+    pest:"মূলত রোগমুক্ত।",
+    market:"ঝুড়ি, টব ও বাগান সীমানায় সজ্জার জন্য জনপ্রিয়।"
+  },
+  "ভিঞ্চা": {
+    emoji:"🌸", en:"Vinca / Periwinkle", cat:"অলংকারী ফুল",
+    info:{ উচ্চতা:"২০–৬০ সেমি", রোপণ:"বীজ/চারা", ফুল_ধরে:"৫০–৬০ দিনে", আলো:"পূর্ণ রোদ" },
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Vinca_major_plant.jpg/640px-Vinca_major_plant.jpg",
+    method:"বীজ বুনে বা নার্সারির চারা কিনে লাগান। গরম ও আর্দ্র আবহাওয়ায় দ্রুত বাড়ে।",
+    care:["নিয়মিত পানি দিন","তাপ সহিষ্ণু — গ্রীষ্মেও ভালো থাকে","মাসে একবার সার দিন"],
+    soil:"উর্বর, সুনিষ্কাশিত মাটি।",
+    pest:"মূলত রোগমুক্ত। অতিরিক্ত পানিতে শিকড় পচে।",
+    market:"বর্ষাকালীন বাগান সজ্জায় এবং ঔষধি গুণের জন্য পরিচিত।"
+  }
+};
+
+// Build index
+const flowerIndex = {};
+DATA.forEach(m => {
+  ['commercial','seasonal','perennial','ornamental'].forEach(cat => {
+    m[cat].forEach(f => {
+      if (!flowerIndex[f]) flowerIndex[f] = { commercial:[], seasonal:[], perennial:[], ornamental:[] };
+      if (!flowerIndex[f][cat].includes(m.month)) flowerIndex[f][cat].push(m.month);
+    });
+  });
+});
+const allFlowers = [...new Set(Object.keys(flowerIndex))].sort();
+
+const CARE_DATA = [
+  { name:"পানি সেচ", color:"#1565c0", items:["গোলাপ","চন্দ্রমল্লিকা","গ্লাডিওলাস","জারবেরা","রজনীগন্ধা"] },
+  { name:"ছাঁটাই ও ডেডহেডিং", color:"#c62828", items:["গোলাপ","গ্লাডিওলাস","চন্দ্রমল্লিকা","গাঁদা","জিনিয়া","কসমস","সূর্যমুখী"] },
+  { name:"সার প্রয়োগ", color:"#558b2f", items:["গোলাপ","রজনীগন্ধা","জারবেরা","গ্লাডিওলাস","সূর্যমুখী","বোগেনভিলিয়া"] },
+  { name:"বাল্ব/কন্দ সংরক্ষণ", color:"#7b1fa2", items:["গ্লাডিওলাস","রজনীগন্ধা","টিউলিপ","ড্যাফোডিল"] },
+  { name:"রোগ-পোকা দমন", color:"#e65100", items:["গোলাপ","চন্দ্রমল্লিকা","জারবেরা","গ্লাডিওলাস","গাঁদা","রজনীগন্ধা"] },
+  { name:"সঠিক রোদ ও ছায়া", color:"#00695c", items:["জারবেরা (আধা ছায়া)","হাস্নাহেনা (ছায়া)","গোলাপ (পূর্ণ রোদ)","গাঁদা (পূর্ণ রোদ)","বেলি (আধা ছায়া)"] }
+];
+
+// ===== MODAL =====
+function openModal(name) {
+  const f = FLOWERS[name];
+  if (!f) return;
+  const overlay = document.getElementById('modalOverlay');
+  const imgWrap = document.getElementById('modalImgWrap');
+  if (f.img) {
+    imgWrap.innerHTML = `<img src="${f.img}" alt="${name}" onerror="this.parentNode.innerHTML='<div class=\\'modal-img-placeholder\\'>${f.emoji}</div>'" style="width:100%;height:220px;object-fit:cover;border-radius:18px 18px 0 0;">`;
+  } else {
+    imgWrap.innerHTML = `<div class="modal-img-placeholder">${f.emoji}</div>`;
+  }
+  document.getElementById('mName').textContent = `${f.emoji} ${name}`;
+  document.getElementById('mSub').textContent = `${f.en} · ${f.cat}`;
+  const ig = document.getElementById('mInfoGrid');
+  ig.innerHTML = Object.entries(f.info).map(([k,v]) =>
+    `<div class="info-box"><b>${k.replace(/_/g,' ')}</b>${v}</div>`
+  ).join('');
+  // Months
+  const info = flowerIndex[name] || {};
+  const allM = [...new Set([...( info.commercial||[]),...(info.seasonal||[]),...(info.perennial||[]),...(info.ornamental||[])])];
+  document.getElementById('mMonths').innerHTML = allM.map(m => `<span class="modal-month-tag">${m}</span>`).join('');
+  document.getElementById('mMethod').textContent = f.method;
+  const ul = document.getElementById('mCare');
+  ul.innerHTML = f.care.map(c => `<li>${c}</li>`).join('');
+  document.getElementById('mSoil').textContent = f.soil;
+  document.getElementById('mPest').textContent = f.pest;
+  document.getElementById('mMarket').textContent = f.market;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ===== BUILD MONTH GRID =====
+function buildMonthGrid() {
+  const grid = document.getElementById('monthGrid');
+  const catMap = { commercial:'pink', seasonal:'yellow', perennial:'purple', ornamental:'white' };
+  const catLabel = { commercial:'🌹 বাণিজ্যিক ফুল', seasonal:'🌼 মৌসুমি ফুল', perennial:'🌺 বহুবর্ষজীবী ফুল', ornamental:'🌿 অলংকারী ফুল' };
+  DATA.forEach(m => {
+    const card = document.createElement('div');
+    card.className = 'month-card';
+    let body = '';
+    ['commercial','seasonal','perennial','ornamental'].forEach(cat => {
+      body += `<div class="cat-label">${catLabel[cat]}</div><div class="tag-list">`;
+      body += m[cat].map(v => `<span class="tag ${catMap[cat]}" onclick="FLOWERS['${v}']&&openModal('${v}')">${v}</span>`).join('');
+      body += `</div>`;
+    });
+    card.innerHTML = `<div class="mc-header"><h3>${m.month}</h3><span>${m.bangla}</span></div><div class="mc-body">${body}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+// ===== SEARCH =====
+function doSearch() {
+  const q = document.getElementById('searchInput').value.trim();
+  const res = document.getElementById('searchResults');
+  res.innerHTML = '';
+  const matches = q ? allFlowers.filter(v => v.includes(q)) : allFlowers;
+  if (!matches.length) { res.innerHTML = '<p style="color:white;">কোনো ফলাফল পাওয়া যায়নি।</p>'; return; }
+  matches.forEach(v => {
+    const info = flowerIndex[v]||{};
+    const allM = [...new Set([...(info.commercial||[]),...(info.seasonal||[]),...(info.perennial||[]),...(info.ornamental||[])])];
+    const f = FLOWERS[v];
+    const card = document.createElement('div');
+    card.className = 'result-card';
+    card.onclick = () => f && openModal(v);
+    card.innerHTML = `<span class="flower-emoji">${f?f.emoji:'🌸'}</span><h4>${v}</h4><div class="months-mini">${allM.slice(0,4).join('، ')}${allM.length>4?'...':''}</div>`;
+    res.appendChild(card);
+  });
+}
+
+// ===== CATEGORY =====
+function showCat(type) {
+  const labels = { commercial:'🌹 বাণিজ্যিক ফুল', seasonal:'🌼 মৌসুমি ফুল', perennial:'🌺 বহুবর্ষজীবী ফুল', ornamental:'🌿 অলংকারী ফুল' };
+  const cls = { commercial:'pink', seasonal:'yellow', perennial:'purple', ornamental:'white' };
+  const d = document.getElementById('catDisplay');
+  const rows = DATA.map(m => {
+    if (!m[type]||!m[type].length) return '';
+    return `<div class="cat-month-row"><div class="mon">${m.month}</div><div class="items">${
+      m[type].map(v=>`<span class="tag ${cls[type]}" onclick="FLOWERS['${v}']&&openModal('${v}')">${v}</span>`).join('')
+    }</div></div>`;
+  }).join('');
+  d.innerHTML = `<h3>${labels[type]}</h3>${rows}`;
+}
+
+// ===== TIMELINE =====
+function buildTimeline() {
+  const freq = {};
+  allFlowers.forEach(v => { freq[v] = DATA.filter(m => ['commercial','seasonal','perennial','ornamental'].some(c => m[c].includes(v))).length; });
+  const sorted = [...allFlowers].sort((a,b) => freq[b]-freq[a]);
+  let html = '<table class="tl"><thead><tr><th>ফুল</th>';
+  DATA.forEach(m => html += `<th>${m.month.substring(0,3)}</th>`);
+  html += '</tr></thead><tbody>';
+  sorted.forEach(v => {
+    html += `<tr><td class="veg-name" onclick="FLOWERS['${v}']&&openModal('${v}')">${v}</td>`;
+    DATA.forEach(m => {
+      const has = ['commercial','seasonal','perennial','ornamental'].some(c => m[c].includes(v));
+      html += `<td class="${has?'yes':''}"></td>`;
+    });
+    html += '</tr>';
+  });
+  html += '</tbody></table>';
+  document.getElementById('timelineGrid').innerHTML = html;
+}
+
+// ===== CARE =====
+function buildCare() {
+  const c = document.getElementById('careCards');
+  CARE_DATA.forEach(n => {
+    const card = document.createElement('div');
+    card.className = 'care-card';
+    card.style.background = `linear-gradient(135deg, ${n.color}, ${n.color}cc)`;
+    card.innerHTML = `<h3>🌸 ${n.name}</h3><div>${n.items.map(v=>`<span class="flower-tag">${v}</span>`).join('')}</div>`;
+    c.appendChild(card);
+  });
+}
+
+// ===== TAB =====
+function switchTab(tab, el) {
+  document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-'+tab).classList.add('active');
+  el.classList.add('active');
+  if (tab === 'search' && !document.getElementById('searchResults').children.length) doSearch();
+}
+
+buildMonthGrid();
+buildTimeline();
+buildCare();
+</script>
+</body>
+</html>
